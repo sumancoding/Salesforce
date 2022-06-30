@@ -1,0 +1,9 @@
+//creating pattern
+
+for (Integer row = 1; row < 6; row++) {
+    String total= '';
+    for (Integer column = 1; column <=row; column++) {
+       total+= '*'; 
+    }
+    System.debug(total);
+}
