@@ -1,0 +1,13 @@
+List <String> days = new List <String> {
+    'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
+};
+
+    Integer totalDays = days.size();
+//System.debug(totalDays);
+
+for(Integer i= 0; i<totalDays; i++) {
+    if(days.get(i) == 'Tuesday') {
+        continue;
+    }
+    System.debug('Today is ' + days.get(i) + ' so eat Chicken' );
+}
