@@ -1,0 +1,31 @@
+public class Friends {
+/*Pizza Rates:
+ 1 slice = $8/slice
+2-3 slice= $7/slice
+>3 slice = $6/ slice
+
+Ross ordered= 3 slices
+Chandler ordered = 1 slice
+Joey ordered= 4 slices */
+    
+//Creating rate cards
+final Integer ONLY_ONE_SLICE = 8;
+final Integer UPTO_THREE_SLICES= 7;
+final Integer MORE_THAN_THREE_SLICES= 6;
+    
+    public Integer getBill(Integer sliceNumbers) {
+        Integer billAmount = sliceNumbers == 1 ? ONLY_ONE_SLICE*sliceNumbers :(sliceNumbers <= 3 ? UPTO_THREE_SLICES*sliceNumbers :MORE_THAN_THREE_SLICES*sliceNumbers);
+    return billAmount;
+    }
+}
+
+//System Debug
+//initalizing instance of a class
+
+Friends pizzaNight= new Friends();
+Integer rossPays = pizzaNight.getBill(3);
+Integer chandlerPays = pizzaNight.getBill(1);
+Integer joeyPays = pizzaNight.getBill(4);
+System.debug('Ross Pays: '+ rossPays);
+System.debug('Chandler Pays: '+ chandlerPays);
+System.debug('Joey Pays: '+ joeyPays);
