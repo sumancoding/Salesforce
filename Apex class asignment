@@ -1,0 +1,22 @@
+// Calculating BMI and pace in km
+
+public class Fitness {
+
+    public Decimal calculateBMI(Decimal weight, Decimal height) {
+        Decimal BMI =  weight / (height * height) ;
+        return BMI;
+    }
+    public Decimal calculatePace (Decimal distance, Decimal minutes) {
+        Decimal hour = minutes / 60;
+        Decimal pace = distance / hour;
+        return pace;
+    }
+    
+}
+
+Fitness finalCalculation = new Fitness();
+Decimal bodyMassIndex= finalCalculation.calculateBMI(80, 1.76);
+System.debug('Your Body Mass Index (BMI) is : '+ bodyMassIndex);
+
+Decimal pace = finalCalculation.calculatePace(10, 150);
+System.debug('The pace calculated is: ' + pace);
