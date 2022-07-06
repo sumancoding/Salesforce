@@ -1,0 +1,49 @@
+/* Apex Class
+
+public class Covid19{
+private Integer recoveredInArea = 0;
+public static Integer recoveredInCountry = 0;
+
+//parameterized constructor to set class variables values
+public Covid19(Integer recoveredInArea) {
+this.recoveredInArea = recoveredInArea;
+recoveredInCountry +=  recoveredInArea;
+}
+public void treatPatient (){
+recoveredInArea++;
+recoveredInCountry++;
+}
+
+public Integer getTreated (){
+return recoveredInArea;
+}
+} 
+*/
+
+//Unit Testing
+@isTest
+public class Covid19Test {
+
+    @isTest
+    public static void treatPatientTest(){
+       //creating instance of a class
+       Covid19 kathmandu = new Covid19(10);
+        
+        //check if the count is 10 or not
+        System.assertEquals(10, kathmandu.getTreated(), 'Treated count doesn\'t match');
+        
+        //creating instance of a class
+       Covid19 pokhara = new Covid19(110);
+        
+        //check if the count is 110 or not
+        System.assertEquals(110, pokhara.getTreated(), 'Treated count doesn\'t match');
+        
+        //check the count of recoveredInCountry, it should be 120
+        System.assertEquals(120, Covid19.recoveredInCountry, 'Not matching');
+        
+        kathmandu.treatPatient();
+        System.assert(kathmandu.getTreated() == 11, 'error');
+         System.assert(Covid19.recoveredInCountry == 121, 'error');
+    }
+    
+}
