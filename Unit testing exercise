@@ -24,6 +24,7 @@ public class FitnessTest {
         Decimal height= 1.2;
         
         Decimal result =Fitness.calculateBMI(weight, height);
+        result= result.setScale(2);
         System.assertEquals(41.67, result, 'Something\'s wrong here.');
     } 
     
