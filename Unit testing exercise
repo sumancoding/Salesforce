@@ -2,6 +2,9 @@
 public class Fitness {
 
 public static Decimal calculateBMI (Decimal weight, Decimal height) {
+if(height <= 0 ) {
+return -1;
+}
 Decimal result = weight/ (height * height);
 return result;
 }
@@ -26,6 +29,16 @@ public class FitnessTest {
         Decimal result =Fitness.calculateBMI(weight, height);
         result= result.setScale(2);
         System.assertEquals(41.67, result, 'Something\'s wrong here.');
+    } 
+    
+     @isTest
+    public static void calculateBMITest2(){
+        Decimal weight= 60;
+        Decimal height= 0;
+        
+        Decimal result =Fitness.calculateBMI(weight, height);
+       
+        System.assertEquals(0, result, 'Something\'s wrong here.');
     } 
     
     
