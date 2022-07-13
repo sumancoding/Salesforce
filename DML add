@@ -1,3 +1,5 @@
+//Always bulkify your code by working with list of records, instead of a single record, to avoid hitting governer limit
+
 List<Account> accounts = new List<Account>();
 Account acc1= new Account(Name='Test Account 1');
 Account acc2= new Account(Name='Test Account 2');
