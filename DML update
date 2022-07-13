@@ -1,0 +1,7 @@
+//If you have ID then you can update any field value
+List<Account> accounts = [SELECT Name FROM Account WHERE Name='Suman1'];
+for(Account acc: accounts){
+    acc.Name='Suman Malla';
+}
+//partial success can be allowed by writing as false
+Database.update(accounts, true);
