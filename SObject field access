@@ -1,0 +1,7 @@
+//using Sobject instead of a specific datatype
+List<SObject> books= [SELECT Name, Price__c FROM Book__c];
+for(SObject book: books) {
+    
+    //Type casting is not important , for example Book.get('Name') but its good practice
+    System.debug('Book Name: ' + (String)book.get('Name') + ' Book Price: ' + (Decimal)book.get('Price__c'));
+}
