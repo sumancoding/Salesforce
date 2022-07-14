@@ -1,0 +1,7 @@
+//create a new account SObject instance
+//Type class actually allows u to skip new keyword
+SObject accountRec = (SObject) Type.forName('Account').newInstance();
+accountRec.put('Name', 'Sample SObject Account');
+accountRec.put('Phone', '+358441656789');
+
+Database.insert(accountRec);
