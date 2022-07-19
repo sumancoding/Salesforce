@@ -1,0 +1,19 @@
+//Must extend Expection Class
+
+public class ProcessException extends Exception {
+
+}
+/*Common Exception Method in Apex Documentation*/
+
+try {
+    //Math Exception, specific Exception 
+    //One try can have multiple catch
+   throw new ProcessException ('My custom exception');
+} catch(Exception e){ //Exception is generic here
+    System.debug('Cause : ' +e.getCause());
+    System.debug('Message : ' +e.getMessage());
+    System.debug('Line Number : ' +e.getLineNumber());
+    System.debug('Stack Trace : ' +e.getStackTraceString());
+} finally {
+    System.debug('Finally called');
+}
