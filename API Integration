@@ -1,0 +1,19 @@
+JSON To Apex
+
+Json String 
+{
+"FirstName": "Apex",
+"LastName": "Hours"
+}
+
+Apex Class
+public Class Student {
+public String FirstName;
+public String LastName;
+}
+
+JSON to Apex Deserialization
+String jsonString = '{"FirstName": "Apex", "LastName": "Hours"}';
+Student st= (Student) System.JSON.deserialize(jsonString Student.class);
+
+
