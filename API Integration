@@ -17,3 +17,46 @@ String jsonString = '{"FirstName": "Apex", "LastName": "Hours"}';
 Student st= (Student) System.JSON.deserialize(jsonString Student.class);
 
 
+Checklist before starting integrating Api with 3rd party app;
+1. Check Remote Site Settings
+2. API Key
+3. Authenticated 
+
+  
+Example: 
+
+public class RestDemoClass {
+
+//if trigger @future(callout = true)
+public static void getMap (String channelId) {
+
+//call the Rest Api with the channel info
+Http http = new Http();
+HttpRequest request = new HttpRequest();
+request.setEndpoint('http://');
+request.setMethod('GET');
+HttpResponse response = http.send(request);
+
+//If the reponse is sucessfull, parse the JSON response.
+
+if(response.getStatusCode() == 200) {
+ System.debug(response.getBody());
+
+//This can be interpreted via Wrapper class or not Wrapper class
+
+YoutubeApiClass result = YoutubeApiClass.parse(response.getBody());
+for(YoutubeApiClass.Items itm: result.items) {
+System.debug('Receieved the following statistics');
+System.debug(itm.statistics);
+}
+
+
+}
+
+}
+}
+
+
+
+
+
