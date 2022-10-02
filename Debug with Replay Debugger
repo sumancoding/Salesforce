@@ -1,0 +1,19 @@
+//Start with Command Palete 
+//sfdx: Turn on Apex debug Log for Replay Debugger
+
+//sfdx: get apex debug logs
+inside sfdx/tools/Debug
+
+inside class select the file
+set a breakpoint, click and click inside log, launch apex debugger with the current file
+
+from top left add configuration
+select Apex log debugger. // as your environment
+
+adds launch configuration at launch.json
+
+clicking on launch apex debugger at top left again
+
+
+
+
