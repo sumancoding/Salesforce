@@ -1,0 +1,18 @@
+public with sharing class BasicCalloutDemo {
+    public static HttpResponse makeGetCallout (){
+        Http http = new Http();
+        //Create Http Request
+        HttpRequest request = new HttpRequest();
+        request.setEndpoint('https://api.gbif.org/v1/species/5231190/name');
+        request.setMethod('GET');
+        
+        //Send the request andget the HTTP response
+        HttpResponse response= http.send(request);
+        
+        //Process the success response
+        if(response.getStatusCode() == 200) {
+            System.debug(response.getBody());
+        }
+        return response;
+    }
+}
